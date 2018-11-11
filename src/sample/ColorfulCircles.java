@@ -55,7 +55,7 @@ public class ColorfulCircles extends Application {
         new Group(new Group(new Rectangle(scene.getWidth(), scene.getHeight(),
             Color.BLACK), circles), colors);
     colors.setBlendMode(BlendMode.OVERLAY);
-    root.getChildren().add(blendModeGroup);
+    root.getChildren().add(blendModeGroup);   //Root is where the blendModeGroup is being added.
     circles.setEffect(new BoxBlur(10, 10, 3));
     Timeline timeline = new Timeline();
     for (Node circle: circles.getChildren()) {
@@ -68,7 +68,6 @@ public class ColorfulCircles extends Application {
               new KeyValue(circle.translateXProperty(), random() * 800),
               new KeyValue(circle.translateYProperty(), random() * 600)
           )
-
       );
     }
 // play 40s of animation
